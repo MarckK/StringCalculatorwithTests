@@ -10,29 +10,29 @@ describe('stringCal', function() {
 });
 
 describe('arrToNum', function() {
-  it('converts array into array of numbers', function() {
+  it('converts array of strings into array of numbers', function() {
     expect(arrToNum.convert(['0'])).toEqual([0]);
   });
 
-  it('converts string into array of strings', function() {
+  it('converts array of strings into array of numbers', function() {
     expect(arrToNum.convert(['1','2'])).toEqual([1, 2]);
   });
 });
 
 describe('arrReduce', function() {
-  it('converts array of numbers into sum', function() {
+  it('reduces array of numbers into sum', function() {
     expect(arrReduce.convert([1, 2])).toEqual(3);
   });
 });
 
 describe('result1', function() {
-  it('converts string with exceptions, into string of numbers', function() {
+  it('reduces string with exceptions, into sum', function() {
     expect(result1.convert('%,2\n3\n4')).toEqual(9);
   });
 });
 
 describe('result1', function() {
-  it('converts string with exceptions, into string of numbers', function() {
+  it('converts string with exceptions, into sum', function() {
     expect(result1.convert('%,2,\n3\n4!')).toEqual(9);
   });
 });
