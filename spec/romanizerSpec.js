@@ -27,3 +27,17 @@ describe('arrReduce', function() {
     expect(arrReduce.convert([1, 2])).toEqual(3);
   });
 });
+
+describe('result', function() {
+
+  it('converts array of numbers into sum', function() {
+    expect(result.convert(['1','2'])).toEqual([3]);
+  });
+});
+
+describe('result2', function() {
+
+  it('converts array of numbers into sum', function() {
+    expect(result2.convert(['1,2'])).toEqual([3]);
+  });
+});

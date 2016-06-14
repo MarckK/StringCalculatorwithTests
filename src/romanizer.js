@@ -21,3 +21,24 @@ arrReduce.convert = function(arr) {
   });
   return reduced;
 };
+
+var result = {};
+result.convert = function (str) {
+  var arrayStrNums = str.split(',');
+  var arrayNums = arrayStrNums.map(function(e) {
+    return parseInt(e, 10);
+  });
+  return arrayNums;
+};
+
+var result2 = {};
+result2.convert = function (str) {
+  var arrayStrNums = str.split(',');
+  var arrayNums = arrayStrNums.map(function(e) {
+    return parseInt(e, 10);
+  });
+    var reduced = arrayNums.reduce(function(a, b) {
+    return a + b;
+  });
+  return reduced;
+};
