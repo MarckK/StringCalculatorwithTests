@@ -25,6 +25,60 @@ describe('arrReduce', function() {
   });
 });
 
+describe('result', function() {
+  it('converts string of numbers into array of numbers', function() {
+    expect(result.convert('1,2')).toEqual([1, 2]);
+  });
+});
+
+describe('result2', function() {
+  it('converts string of numbers into sum', function() {
+    expect(result2.convert('1,2')).toEqual(3);
+  });
+});
+
+describe('result2', function() {
+  it('converts string of numbers into sum', function() {
+    expect(result2.convert('1,2,4,5,8')).toEqual(20);
+  });
+});
+
+describe('regex', function() {
+  it('converts string of numbers into sum, and deals with exceptions', function() {
+    expect(regex.convert('1,2\n3\n4')).toEqual(10);
+  });
+});
+
+describe('regex2', function() {
+  it('converts string of numbers into sum, and deals with MORE exceptions', function() {
+    expect(regex2.convert('1,2')).toEqual(3);
+  });
+});
+
+describe('regex2', function() {
+  it('converts string of numbers into sum, and deals with MORE exceptions', function() {
+    expect(regex2.convert('1£2')).toEqual(3);
+  });
+});
+
+describe('regex2', function() {
+  it('converts string of numbers into sum, and deals with MORE exceptions', function() {
+    expect(regex2.convert('1$1&1(1,1,%1)')).toEqual(6);
+  });
+});
+
+describe('regex2', function() {
+  it('converts string of numbers into sum, and deals with MORE exceptions', function() {
+    expect(regex2.convert('1$11&1(1,1,%1)')).toEqual(16);
+  });
+});
+
+describe('regex2', function() {
+  it('converts string of numbers into sum, and deals with MORE exceptions', function() {
+    expect(regex2.convert('1$%1&*(1,$£1,%1)')).toEqual(5);
+  });
+});
+
 describe('result1', function() {
   it('reduces string with exceptions, into sum', function() {
     expect(result1.convert('%,2\n3\n4')).toEqual(9);
@@ -36,33 +90,3 @@ describe('result1', function() {
     expect(result1.convert('%,2,\n3\n4!')).toEqual(9);
   });
 });
-
-// describe('result', function() {
-//   it('converts string of numbers into array of numbers', function() {
-//     expect(result.convert('1,2')).toEqual([1, 2]);
-//   });
-// });
-
-// describe('result2', function() {
-//   it('converts string of numbers into sum', function() {
-//     expect(result2.convert('1,2')).toEqual(3);
-//   });
-// });
-//
-// describe('result2', function() {
-//   it('converts string of numbers into sum', function() {
-//     expect(result2.convert('1,2,4,5,8')).toEqual(20);
-//   });
-// });
-
-// describe('regex', function() {
-//   it('converts string into array of strings, and deals with exceptions', function() {
-//     expect(regex.convert('1,2\n3\n4')).toEqual(10);
-//   });
-// });
-//
-// describe('regex2', function() {
-//   it('converts string with exceptions, into string of numbers', function() {
-//     expect(regex2.convert('%,2\n3\n4')).toEqual('234');
-//   });
-// });
