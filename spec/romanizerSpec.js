@@ -1,11 +1,11 @@
 
-describe('stringCal', function() {
+describe('stringToArray', function() {
   it('converts string into array of strings', function() {
-    expect(stringCal.convert('0')).toEqual(['0']);
+    expect(stringToArray.convert('0')).toEqual(['0']);
   });
 
   it('converts string into array of strings', function() {
-    expect(stringCal.convert('1,2')).toEqual(['1','2']);
+    expect(stringToArray.convert('1,2')).toEqual(['1','2']);
   });
 });
 
@@ -25,68 +25,80 @@ describe('arrReduce', function() {
   });
 });
 
-describe('result', function() {
+describe('stringIntoArrayofNums', function() {
   it('converts string of numbers into array of numbers', function() {
-    expect(result.convert('1,2')).toEqual([1, 2]);
+    expect(stringIntoArrayofNums.convert('1,2')).toEqual([1, 2]);
   });
 });
 
-describe('result2', function() {
+describe('StringIntoSum', function() {
   it('converts string of numbers into sum', function() {
-    expect(result2.convert('1,2')).toEqual(3);
+    expect(StringIntoSum.convert('1,2')).toEqual(3);
   });
 });
 
-describe('result2', function() {
+describe('StringIntoSum', function() {
   it('converts string of numbers into sum', function() {
-    expect(result2.convert('1,2,4,5,8')).toEqual(20);
+    expect(StringIntoSum.convert('1,2,4,5,8')).toEqual(20);
   });
 });
 
-describe('regex', function() {
+describe('dealingWithBasicDelimiter', function() {
   it('converts string of numbers into sum, and deals with exceptions', function() {
-    expect(regex.convert('1,2\n3\n4')).toEqual(10);
+    expect(dealingWithBasicDelimiter.convert('1,2\n3\n4')).toEqual(10);
   });
 });
 
-describe('regex2', function() {
+describe('dealingWithAllNanDelimiters', function() {
   it('converts string of numbers into sum, and deals with MORE exceptions', function() {
-    expect(regex2.convert('1,2')).toEqual(3);
+    expect(dealingWithAllNanDelimiters.convert('1,2')).toEqual(3);
   });
 });
 
-describe('regex2', function() {
+describe('dealingWithAllNanDelimiters', function() {
   it('converts string of numbers into sum, and deals with MORE exceptions', function() {
-    expect(regex2.convert('1£2')).toEqual(3);
+    expect(dealingWithAllNanDelimiters.convert('1£2')).toEqual(3);
   });
 });
 
-describe('regex2', function() {
+describe('dealingWithAllNanDelimiters', function() {
   it('converts string of numbers into sum, and deals with MORE exceptions', function() {
-    expect(regex2.convert('1$1&1(1,1,%1)')).toEqual(6);
+    expect(dealingWithAllNanDelimiters.convert('1$1&1(1,1,%1)')).toEqual(6);
   });
 });
 
-describe('regex2', function() {
+describe('dealingWithAllNanDelimiters', function() {
   it('converts string of numbers into sum, and deals with MORE exceptions', function() {
-    expect(regex2.convert('1$11&1(1,1,%1)')).toEqual(16);
+    expect(dealingWithAllNanDelimiters.convert('1$11&1(1,1,%1)')).toEqual(16);
   });
 });
 
-describe('regex2', function() {
+describe('dealingWithAllNanDelimiters', function() {
   it('converts string of numbers into sum, and deals with MORE exceptions', function() {
-    expect(regex2.convert('1$%1&*(1,$£1,%1)')).toEqual(5);
+    expect(dealingWithAllNanDelimiters.convert('1$%1&*(1,$£1,%1)')).toEqual(5);
   });
 });
 
-describe('result1', function() {
+describe('refactoringReduce', function() {
   it('reduces string with exceptions, into sum', function() {
-    expect(result1.convert('%,2\n3\n4')).toEqual(9);
+    expect(refactoringReduce.convert('%,2\n3\n4')).toEqual(9);
   });
 });
 
-describe('result1', function() {
+describe('refactoringReduce', function() {
   it('converts string with exceptions, into sum', function() {
-    expect(result1.convert('%,2,\n3\n4!')).toEqual(9);
+    expect(refactoringReduce.convert('%,2,\n3\n4!')).toEqual(9);
+  });
+});
+
+describe('lessthan1000', function() {
+  it('converts string of numbers into sum, and deals with MORE exceptions', function() {
+    expect(lessthan1000.convert('1000,1')).toEqual(1);
+  });
+});
+
+describe('lessthan1000', function() {
+  it('converts string of numbers into sum, and deals with MORE exceptions', function() {
+    expect(lessthan1000.convert('//[???]\n1???2???3')).toEqual(6);
   });
 });

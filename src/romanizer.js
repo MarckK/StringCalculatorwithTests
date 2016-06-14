@@ -1,6 +1,6 @@
 
-var stringCal = {};
-stringCal.convert = function (str) {
+var stringToArray = {};
+stringToArray.convert = function (str) {
   var arrayStrNums = str.split(',');
   return arrayStrNums;
 };
@@ -21,15 +21,15 @@ arrReduce.convert = function(arr) {
   return reduced;
 };
 
-var result = {};
-result.convert = function (str) {
+var stringIntoArrayofNums = {};
+stringIntoArrayofNums.convert = function (str) {
   return str
     .split(',')
     .map(Number);
 };
 
-var result2 = {};
-result2.convert = function (str) {
+var StringIntoSum = {};
+StringIntoSum.convert = function (str) {
   return str
     .split(',')
     .map(Number)
@@ -38,8 +38,8 @@ result2.convert = function (str) {
   });
 };
 
-var regex = {};
-regex.convert = function (str) {
+var dealingWithBasicDelimiter = {};
+dealingWithBasicDelimiter.convert = function (str) {
   return str
     .split(/[,\n]/)
     .map(Number)
@@ -48,8 +48,8 @@ regex.convert = function (str) {
   });
 };
 
-var regex2 = {};
-regex2.convert = function (str) {
+var dealingWithAllNanDelimiters = {};
+dealingWithAllNanDelimiters.convert = function (str) {
   return str
     .split(/\D/)
     .map(Number)
@@ -63,10 +63,23 @@ function sum(a, b) {
   return a + b;
 }
 
-var result1 = {};
-result1.convert = function (str) {
+var refactoringReduce = {};
+refactoringReduce.convert = function (str) {
   return str
     .split(/\D/)
     .map(Number)
+    .reduce(sum);
+};
+
+function no1000(value) {
+  return value < 1000;
+}
+
+var lessthan1000 = {};
+lessthan1000.convert = function (str) {
+  return str
+    .split(/\D/)
+    .map(Number)
+    .filter(no1000)
     .reduce(sum);
 };
