@@ -1,6 +1,5 @@
 
 var stringCal = {};
-
 stringCal.convert = function (str) {
   var arrayStrNums = str.split(',');
   return arrayStrNums;
@@ -34,6 +33,36 @@ result.convert = function (str) {
 var result2 = {};
 result2.convert = function (str) {
   var arrayStrNums = str.split(',');
+  var arrayNums = arrayStrNums.map(function(e) {
+    return parseInt(e, 10);
+  });
+    var reduced = arrayNums.reduce(function(a, b) {
+    return a + b;
+  });
+  return reduced;
+};
+
+var regex = {};
+regex.convert = function (str) {
+  var arrayStrNums = str.split(/[,\n]/);
+  var arrayNums = arrayStrNums.map(function(e) {
+    return parseInt(e, 10);
+  });
+    var reduced = arrayNums.reduce(function(a, b) {
+    return a + b;
+  });
+  return reduced;
+};
+
+var regex2 = {};
+regex2.convert = function (str) {
+  return str.replace(/[\D]/g, "");
+};
+
+var regex3 = {};
+regex3.convert = function (str) {
+  var cleanString = str.replace(/[\D]/g, "");
+  var arrayStrNums = cleanString.split('');
   var arrayNums = arrayStrNums.map(function(e) {
     return parseInt(e, 10);
   });
