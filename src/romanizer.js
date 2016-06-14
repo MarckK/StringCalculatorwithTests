@@ -26,7 +26,7 @@ var result = {};
 result.convert = function (str) {
   var arrayStrNums = str.split(',');
   var arrayNums = arrayStrNums.map(function(e) {
-    return parseInt(e, 10);
+    return Number(e);
   });
   return arrayNums;
 };

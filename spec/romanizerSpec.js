@@ -30,14 +30,14 @@ describe('arrReduce', function() {
 
 describe('result', function() {
 
-  it('converts array of numbers into sum', function() {
-    expect(result.convert(['1','2'])).toEqual([3]);
+  it('converts string of numbers into array of numbers', function() {
+    expect(result.convert('1,2')).toEqual([1, 2]);
   });
 });
 
 describe('result2', function() {
 
   it('converts array of numbers into sum', function() {
-    expect(result2.convert(['1,2'])).toEqual([3]);
+    expect(result2.convert('1,2')).toEqual(3);
   });
 });
